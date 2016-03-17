@@ -58,7 +58,9 @@ uis.directive('uiSelectChoices',
           rowsInner.attr('ng-mouseenter', '$select.setActiveItem('+$select.parserResult.itemName +')')
               .attr('ng-click', '$select.select(' + $select.parserResult.itemName + ',$select.skipFocusser,$event)');
         }
-
+        
+        element.removeAttr('ui-select-choices');//fix-#1499-error
+        
         $compile(element, transcludeFn)(scope); //Passing current transcludeFn to be able to append elements correctly from uisTranscludeAppend
 
         scope.$watch('$select.search', function(newValue) {
