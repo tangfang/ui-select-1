@@ -59,7 +59,7 @@ uis.directive('uiSelectChoices',
               .attr('ng-click', '$select.select(' + $select.parserResult.itemName + ',$select.skipFocusser,$event)');
         }
         
-        element.removeAttr('ui-select-choices');//fix-#1499-error
+        element.removeAttr('ui-select-choices');
         
         $compile(element, transcludeFn)(scope); //Passing current transcludeFn to be able to append elements correctly from uisTranscludeAppend
 
